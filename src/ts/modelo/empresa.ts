@@ -26,4 +26,12 @@ export default class Empresa implements Publicador {
             assinante.atualizar(this)
         }
     }
+    public removerCliente(cliente: Cliente): void {
+    let indice = this.clientes.indexOf(cliente)
+    if (indice !== -1) {
+        this.clientes.splice(indice, 1)
+        this.notificar()
+    }
+    }
+
 }
